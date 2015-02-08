@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="benzingaApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Benzinga Mobile Stocks</title>
+    
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="angular-animate.js"></script>
+    <script src="ng-route.js"></script>
+    <script src="onlyDigits.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>    
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body ng-controller="MainController">
+
+    <nav>    
+      <ul class="pull-left">
+        <li><a href="#/">BZ<span class="pro" style="font-weight:300">Pro</span></a></li>
+      </ul>
+
+      <ul class="pull-right">
+        <li><a href="#/portfolio/" class="glyphicon glyphicon-briefcase"></a></li>
+        <li><a href="#/history/" class="glyphicon glyphicon-time"></a></li>
+        <li><a href="#/search/" class="glyphicon glyphicon-search"></a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="container">
+      
+      <div ng-view></div>
+	  <h1 ng-hide="equities.length">Search for a ticker</h1> 
+      <form class="search-form" ng-submit="searchSymbol(ticker2)">
+        <input type="text" ng-model="ticker2" placeholder="search ticker" remove-blur>
+        <span class="search glyphicon glyphicon-search" ng-click="searchSymbol(ticker2)"></span>
+      </form>
+
+    </div>
+
+  </body>
+</html>

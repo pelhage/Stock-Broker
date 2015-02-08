@@ -1,0 +1,268 @@
+/*                                                                                           
+                                             bbbbbbbb                                      
+        GGGGGGGGGGGGGlllllll                 b::::::b                              lllllll 
+     GGG::::::::::::Gl:::::l                 b::::::b                              l:::::l 
+   GG:::::::::::::::Gl:::::l                 b::::::b                              l:::::l 
+  G:::::GGGGGGGG::::Gl:::::l                  b:::::b                              l:::::l 
+ G:::::G       GGGGGG l::::l    ooooooooooo   b:::::bbbbbbbbb      aaaaaaaaaaaaa    l::::l 
+G:::::G               l::::l  oo:::::::::::oo b::::::::::::::bb    a::::::::::::a   l::::l 
+G:::::G               l::::l o:::::::::::::::ob::::::::::::::::b   aaaaaaaaa:::::a  l::::l 
+G:::::G    GGGGGGGGGG l::::l o:::::ooooo:::::ob:::::bbbbb:::::::b           a::::a  l::::l 
+G:::::G    G::::::::G l::::l o::::o     o::::ob:::::b    b::::::b    aaaaaaa:::::a  l::::l 
+G:::::G    GGGGG::::G l::::l o::::o     o::::ob:::::b     b:::::b  aa::::::::::::a  l::::l 
+G:::::G        G::::G l::::l o::::o     o::::ob:::::b     b:::::b a::::aaaa::::::a  l::::l 
+ G:::::G       G::::G l::::l o::::o     o::::ob:::::b     b:::::ba::::a    a:::::a  l::::l 
+  G:::::GGGGGGGG::::Gl::::::lo:::::ooooo:::::ob:::::bbbbbb::::::ba::::a    a:::::a l::::::l
+   GG:::::::::::::::Gl::::::lo:::::::::::::::ob::::::::::::::::b a:::::aaaa::::::a l::::::l
+     GGG::::::GGG:::Gl::::::l oo:::::::::::oo b:::::::::::::::b   a::::::::::aa:::al::::::l
+        GGGGGG   GGGGllllllll   ooooooooooo   bbbbbbbbbbbbbbbb     aaaaaaaaaa  aaaallllllll
+
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+html {
+  font-size: 16px;
+}
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #FF5722;
+  border-top: 8px solid #E64A19;
+}
+.container {
+  margin: 65px auto;
+  padding: 0 25px;
+  overflow: auto;
+}
+h1 {
+  margin: 2.8rem 0 0 0; /*Not Global*/
+  font-weight: 300;
+  border-bottom: 1px solid #444;
+}
+h2 {
+  margin-bottom: 1.9rem; /*Not Global*/
+}
+ul {
+  list-style-type: none;
+}
+ul.pull-left { float: left }
+ul.pull-right { float: right }
+ul.pull-left li, ul.pull-right li {
+  display: inline-block;
+}
+ul.pull-left li a, ul.pull-right li a {
+  padding: 0 10px;
+  line-height: 50px;
+  color: white;
+  font-size: 30px; /* Not Global */
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+.buynsell {
+  color: #444;
+}
+.btn-group {
+  margin: 15px 0;
+  text-align: center;
+}
+  .btn {
+    display: inline-block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+    width: calc(50% - 8px);
+    width: -webkit-calc(50% - 8px);
+    width: -moz-calc(50% - 8px);  
+    padding: 15px 0;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #536DFE;
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+  .btn:hover, .active {
+    background: #3a57fe;
+    cursor: pointer;
+  }
+
+.inactive {
+	background: #a0aefe;
+}
+    .sell {
+      float: left;
+    }
+    .buy {
+      float: right;
+    }
+    .btn.buy.false {
+      width: 100% !important;
+    }
+
+nav input {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  bottom: 8px;
+  height: 30px;
+  width: 80px;
+  border: 1px solid #FFCCBC;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background: #ff6a3c;
+  padding-left: 10px;
+}
+.container input {
+  height: 55px;
+  font-size: 25px !important;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;  
+  padding: 5px 15px;
+  border: 4px solid #FFCCBC !important;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  width: calc(100% - 100px);
+  width: -webkit-calc(100% - 100px);
+  width: -moz-calc(100% - 100px);  
+  font-size: 40px;
+}
+.search {
+  font-size: 40px;
+  padding-left: 15px;
+  top: 5px !important;
+  color: #FFCCBC;
+}
+.search:hover {
+  color: #FF5722;
+  cursor: pointer;
+}
+.ticker-image {
+  width: 100%;
+  min-height: 220px;
+  max-height: 225px;
+  overflow: hidden;
+  margin-top: -22px !important;
+}
+.img-container {
+	min-height: 210px;
+	max-height: 215px;
+	overflow: hidden;
+}
+.ticker-header {
+  text-align: center;
+  margin: 15px 0 30px 0;
+}
+  .ticker{
+    font-size: 19px;
+  }
+  .ticker-price {
+    margin-top: 15px;
+    font-size: 45px;
+    font-weight: 300;
+  }
+  .dollar {
+    font-size: 18px;
+    line-height: 25px;
+    vertical-align: middle;
+  }
+.company-name {
+  font-size: 11px;
+  color: #ccc;
+}
+tr {
+  border-top: #B6B6B6
+}
+th {
+  background: #f5f5f5;
+}
+.stats ul {
+  float: left;
+  width: 50%;
+}
+.stats li {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 8px 0;
+}
+
+/* Fade in content on page load and feed load */
+.ng-enter, .ng-move {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+.ng-enter {
+    opacity: 0;
+}
+.ng-enter-active {
+    opacity: 1;
+}
+.show-hide {
+  margin: 30px 0;
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+.show-hide.ng-hide {
+  opacity:0;
+}
+
+.search-form {
+	margin-top: 4em;
+}
+
+@media only screen and (max-width: 649px) {
+  h1 { font-size: 1.5rem; }
+  .pro { display: none; }
+}
+
+@media only screen and (min-width: 650px) {
+  .container {
+	  max-width: 700px;
+  }
+
+}
+
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-search:before {
+  content: "\e003";
+}
+.glyphicon-briefcase:before {
+  content: "\e139";
+}
+.glyphicon-time:before {
+  content: "\e023";
+}

@@ -1,0 +1,19 @@
+<h1>My Portfolio <span style="float:right">{{balance | currency}}</span></h1> 
+<h2 ng-hide="equities.length" style="font-weight:300">You haven't purchased any shares yet. Search for a share you'd like to trade:</h2>
+
+<table width="100%" ng-show="equities.length">
+  <thead>
+    <tr>
+      <th>Equity</th>
+      <th>Quantity</th>
+      <th>Current News</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="shares in equities" align="center">
+      <td><a href="#" ng-click="searchSymbol(shares.ticker)">{{shares.ticker}}</a></td>
+      <td>{{shares.qty}}</td>
+      <td><a ng-href="http://www.benzinga.com/stock-articles/{{shares.ticker}}/all" target="_blank">View Articles</a></td>
+    </tr>
+  </tbody>
+</table>

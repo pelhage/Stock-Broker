@@ -1,0 +1,61 @@
+<div class="buynsell show-hide" ng-show="currentEquity">
+  
+  
+  <div class="ticker-header">
+    <p class="ticker">{{currentEquity.symbol}}</p>
+    <p class="company-name">{{currentEquity.name}}</p>
+    <p class="ticker-price">
+      <span class="dollar">$</span>{{currentEquity.price | number : 2}}
+    </p>
+    <p class="price-change">{{currentEquity.pricedaychange | currency}} ({{currentEquity.pricepercentchange}})</p>
+  </div>
+  
+  <div class="img-container">
+	  <img ng-show="currentEquity" class="ticker-image show-hide" ng-src="http://chart.finance.yahoo.com/t?s={{currentEquity.symbol}}&lang=en-US&region=US&width=600&height=300">
+  </div>
+  
+
+  <div class="btn-group">
+    <!-- vv Too much logic with these expressions vv -->
+    <a ng-show="canSell" class="btn sell" href="" ng-click="formA = false; showPurchase = true;" ng-class="{active: formA == false, inactive: formA == true}">Sell</a>
+    
+    <a class="btn buy {{canSell}}"  href="" ng-click="formA = true; showPurchase = true"
+    ng-class="{active: formA == true, inactive: formA == false}">Buy</a>
+    
+    <div style="clear:both"></div>
+
+  </div>
+
+
+
+  <div class="show-hide" ng-show="showPurchase">
+    <form ng-show="formA" ng-submit="buyEquity(currentEquity.symbol, currentEquity.bid, qty)" style="vertical-align: middle">
+      <input type="text" style="width:calc(50% - 8px)" ng-model="qty" placeholder="quantity" numbers-only>
+       <a class="btn buy"  ng-click="buyEquity(currentEquity.symbol, currentEquity.bid, qty)" 
+       ng-class="{active: formA === false}">Confirm Buy</a>
+    </form>
+    <form ng-hide="formA" ng-submit="sellEquity(currentEquity.symbol, currentEquity.bid, qty)" style="vertical-align: middle">
+      <input type="text" style="width:calc(50% - 8px)" ng-model="qty" placeholder="quantity" numbers-only>
+       <a class="btn buy" ng-click="sellEquity(currentEquity.symbol, currentEquity.bid, qty)">Confirm Sell</a>
+    </form>
+  </div>
+
+
+
+  <div class="stats">
+    <h1>Stats</h1>
+    <ul>
+      <li>Open: {{currentEquity.priceopen | number: 2}}</li>
+      <li>Bid: {{currentEquity.bid | number: 2}}</li>
+      <li>Ask: {{currentEquity.ask | number: 2}}</li>
+    </ul>
+    <ul>
+      <li>Mkt Cap: {{currentEquity.marketcap}}</li>
+      <li>Close: {{currentEquity.priceclose | number: 2}}</li>
+      <li>EPS: {{currentEquity.eps | number: 2}}</li>
+    </ul>
+    <div style="clear:both"></div>
+  </div>
+ 
+
+</div>
